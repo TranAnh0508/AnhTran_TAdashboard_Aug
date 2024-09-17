@@ -1,5 +1,6 @@
 package auto.listeners;
 
+import auto.report.AllureManager;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -30,7 +31,7 @@ public class TestListener implements ITestListener {
         return ((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
-    // Đính kèm mã nguồn của trang hiện tại vào Allure Report (tùy chọn)
+    // Đính kèm mã nguồn của trang hiện tại vào Allure Report
     @Attachment(value = "Page Source", type = "text/html")
     public String attachPageSource() {
         return WebDriverRunner.getWebDriver().getPageSource();
@@ -38,10 +39,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        // Chụp ảnh màn hình khi test thất bại
-        attachScreenshot();
-
-        // Đính kèm thêm log hoặc thông tin khác nếu cần
-        attachPageSource();
+        AllureManager.saveTextLog(result.getName() + " is failed.");
+        AllureManager.saveScreenshotPNG();
     }
 }
