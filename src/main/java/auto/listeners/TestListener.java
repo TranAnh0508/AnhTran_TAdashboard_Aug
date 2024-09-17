@@ -22,7 +22,6 @@ public class TestListener implements ITestListener {
     public void onTestStart(ITestResult result) {
         log.info("Test case \"{} - {}\" is started", result.getMethod().getMethodName(),
                 result.getMethod().getDescription());
-
     }
 
     // Chụp và đính kèm ảnh màn hình vào Allure Report

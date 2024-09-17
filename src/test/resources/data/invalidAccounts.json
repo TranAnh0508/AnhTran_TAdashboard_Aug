@@ -1,0 +1,14 @@
+{
+  "invalidBothUsernameAndPass": {
+    "username": "abc",
+    "password": "abc"
+  },
+  "invalidPass": {
+    "username": "administrator",
+    "password": "abc"
+  },
+  "empty": {
+    "username": "",
+    "password": ""
+  }
+}
