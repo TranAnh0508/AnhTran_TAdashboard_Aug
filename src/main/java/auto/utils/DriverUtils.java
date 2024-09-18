@@ -12,7 +12,7 @@ public class DriverUtils {
     //AlertUtils
     @Step("Accept the Alert")
     public static void acceptAlert() {
-        WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(Constants.TIMESOUT));
+        WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(Constants.TIMES_OUT));
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alert = WebDriverRunner.getWebDriver().switchTo().alert();
         alert.accept();
@@ -20,7 +20,7 @@ public class DriverUtils {
 
     @Step("Get the text from Alert")
     public static String getAlertText() {
-        WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(Constants.TIMESOUT));
+        WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(Constants.TIMES_OUT));
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alert = WebDriverRunner.getWebDriver().switchTo().alert();
         return alert.getText();

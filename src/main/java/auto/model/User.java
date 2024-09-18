@@ -14,11 +14,11 @@ public class User {
     private String password;
 
     public static User getValidAcc(String key) {
-        return JsonUtils.to(Constants.VALIDACCOUNTSPATH,key, User.class);
+        return JsonUtils.to(Constants.VALID_ACCOUNTS_PATH,key, User.class);
     }
 
     public static User getInvalidAcc(String key) {
-        return JsonUtils.to(Constants.INVALIDACCOUNTSPATH,key,User.class);
+        return JsonUtils.to(Constants.INVALID_ACCOUNTS_PATH,key,User.class);
     }
 
     public static User getAdminAcc() {

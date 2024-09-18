@@ -31,7 +31,8 @@
                     <systemPropertyVariables>
                         <property>
                             <name>allure.results.directory</name>
-                            <value>${project.build.directory}/allure-results</value>
+<!--                            <value>${project.build.directory}/allure-results</value>-->
+                            <value>target/allure-results</value>
                             <allure.results.directory>target/allure-results</allure.results.directory>
                         </property>
                     </systemPropertyVariables>
@@ -185,6 +186,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.26</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-model</artifactId>
+            <version>2.18.1</version>
         </dependency>
     </dependencies>
 
