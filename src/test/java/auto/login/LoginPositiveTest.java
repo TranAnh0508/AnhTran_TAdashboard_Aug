@@ -11,10 +11,10 @@ import auto.page.LoginPage;
 
 @Listeners
 public class LoginPositiveTest extends TestBase {
-    private LoginPage loginPage = new LoginPage();
-    private DashboardMainPage dashboardMainPage = new DashboardMainPage();
+    private final LoginPage loginPage = new LoginPage();
+    private final DashboardMainPage dashboardMainPage = new DashboardMainPage();
 
-    private User user = User.getAdminAcc();
+    private final User user = User.getAdminAcc();
 
     @Test(description = "Verify that the user can login successfully with a valid username and password")
     public void loginPositiveTest() {
