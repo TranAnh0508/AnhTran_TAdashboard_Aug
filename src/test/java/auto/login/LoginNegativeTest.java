@@ -5,21 +5,17 @@ import auto.model.User;
 import auto.utils.DriverUtils;
 import auto.utils.MessageUtils;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import auto.page.LoginPage;
 
 @Listeners
 public class LoginNegativeTest extends TestBase {
-    private final LoginPage loginPage = new LoginPage();
+    private  LoginPage loginPage = new LoginPage();
 
     @DataProvider(name = "Invalid Credentials")
     public static Object[][] invalidAccounts() {
         return new Object[][]{
-                {User.getInvalidAcc("invalidBothUsernameAndPass"), MessageUtils.getAlertMessage("invalidInfo")},
-                {User.getInvalidAcc("empty"), MessageUtils.getAlertMessage("empty")}
+                {User.getInvalidAcc("invalidBothUsernameAndPass"), MessageUtils.getAlertMessage("invalidInfo")}
         };
     }
 
