@@ -17,19 +17,20 @@ public class ParallelTest {
     @Parameters("browser")
     public void setUp(String browser) {
         if (browser.equalsIgnoreCase("edge")) {
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions chromeOptions = new ChromeOptions();
-            Configuration.browser = "edge";
-            Configuration.browserCapabilities = chromeOptions;
-        } else if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.edgedriver().setup();
             EdgeOptions edgeOptions = new EdgeOptions();
-            Configuration.browser = "chrome";
+            Configuration.browser = "edge";
             Configuration.browserCapabilities = edgeOptions;
+        } else if (browser.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            Configuration.browser = "chrome";
+            Configuration.browserCapabilities = chromeOptions;
         }
-
+        Configuration.timeout = 5000;
+        open(Constants.DASHBOARD_URL);
         WebDriverRunner.getWebDriver().manage().window().maximize();
-        Configuration.reportsFolder = "allure-results";  // Đường dẫn lưu kết quả test
+        Configuration.reportsFolder = "allure-results";
     }
 
     @Test
