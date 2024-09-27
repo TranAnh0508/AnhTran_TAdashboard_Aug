@@ -6,7 +6,8 @@ public class Constants {
     public static final int TIMES_OUT = 10;
 
     //FilePath
-    public static final String INVALID_ACCOUNTS_PATH = "src/test/resources/data/invalidAccounts.json";
-    public static final String VALID_ACCOUNTS_PATH = "src/test/resources/data/validAccounts.json";
-    public static final String MESSAGES_PATH = "src/test/resources/data/alertMessages.json";
+    public static final String INVALID_ACCOUNTS_PATH = "src/test/resources/data/InvalidAccounts.json";
+    public static final String VALID_ACCOUNTS_PATH = "src/test/resources/data/ValidAccounts.json";
+    public static final String MESSAGES_PATH = "src/test/resources/data/AlertMessages.json";
+    public static final String PAGE_DEFAULT_PATH = "src/test/resources/data/DefaultPage.json";
 }

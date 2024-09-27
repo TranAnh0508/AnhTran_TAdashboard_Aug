@@ -22,7 +22,7 @@ public class LoginPositiveTest extends TestBase {
         Assertion.assertTrue(dashboardMainPage.isAdminDropdownDisplayed(), "Verify that the user login successfully");
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void afterMethodPositive() {
         dashboardMainPage.logout();
     }

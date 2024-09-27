@@ -25,7 +25,7 @@ public class LoginNegativeTest extends TestBase {
         Assert.assertEquals(DriverUtils.getAlertText(), errorMessage, "Error message appears");
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void afterMethodNegative() {
         DriverUtils.acceptAlert();
     }

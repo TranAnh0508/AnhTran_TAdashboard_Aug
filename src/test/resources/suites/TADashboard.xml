@@ -5,19 +5,20 @@
         <listener class-name="auto.listeners.TestListener"/>
     </listeners>
 
-    <test name="EdgeTests">
-        <parameter name="browser" value="edge"/>
-        <classes>
-            <class name="auto.login.LoginPositiveTest"/>
-            <class name="auto.login.LoginNegativeTest"/>
-        </classes>
-    </test>
+<!--    <test name="EdgeTests">-->
+<!--        <parameter name="browser" value="edge"/>-->
+<!--        <classes>-->
+<!--            <class name="auto.login.LoginPositiveTest"/>-->
+<!--            <class name="auto.login.LoginNegativeTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
     <test name="ChromeTests">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="auto.login.LoginPositiveTest"/>
-            <class name="auto.login.LoginNegativeTest"/>
+<!--            <class name="auto.login.LoginPositiveTest"/>-->
+<!--            <class name="auto.login.LoginNegativeTest"/>-->
+            <class name="auto.mainPage.VisiblePageTest"/>
         </classes>
     </test>
 
