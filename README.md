@@ -6,13 +6,15 @@ This repository is used to test the [Dashboard](http://localhost:54000/TADashboa
 ## Prerequisites
 
 ### Application
-IntelliJ IDEA
+IntelliJ IDEA Community Edition (download here: https://www.jetbrains.com/idea/download/?section=windows)
 + Should be used because this is the application that wrote this repository
 + Other IDEAs can be used, but installation and usage will be slightly different
 
 ### Environments
-+ Java 17
-+ Maven
++ Java 17 (download here: https://www.java.com/download/ie_manual.jsp)
++ Maven (visit here: https://mvnrepository.com/)
++ TestNG (visit here: https://mvnrepository.com/artifact/org.testng/testng)
++ Selenide (download here: https://selenide.org/2024/09/15/selenide-7.5.0/)
 
 ### How to run the code
 1. Download source code (location, unzip,...)
@@ -22,6 +24,13 @@ IntelliJ IDEA
 5. Make sure the browser is on the correct version (updated if the version is too old)
 6. Run tests by commandline or using UI
 
+### How to get the results
+1. Run tests by commandline or using UI
+2. Enter '''allure serve allure-results''' into the Terminal and then press Enter
+3. You should see the results like this:
+![allure_results_sample.png](img.png)
+4. You can visit this website to get more information
+
 ### The features are applied
 + Github: Gitflow
 + Configuration: pom.xml: Dependencies, Commandline
@@ -29,9 +38,8 @@ IntelliJ IDEA
 + Report: Allure report
 + Parallel / Grid
 
-## Details of test plan:
-### Tested functions:
-#### Login
+## Learn more about Selenium:
+Visit here: https://anhtester.com/blog/selenium-java?fbclid=IwAR2jNVW-mHyz9zxivz72ELF3TLrgJgO0ePR7jnKwVbqoD_65h3PJI7Ef8M8
 
 
 
