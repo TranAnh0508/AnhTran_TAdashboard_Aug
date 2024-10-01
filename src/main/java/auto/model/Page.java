@@ -11,7 +11,13 @@ import lombok.*;
 @Builder
 public class Page {
     private String pageName;
+    public String getTrimPageName() {
+        return pageName.replace(" ", " ");
+    }
     private String parentPage;
+    public String getTrimParentName() {
+        return parentPage.replace(" ", " ");
+    }
     @Builder.Default
     private Integer numberOfColumns = 2;
     private String displayAfter;

@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Random;
 
 public class NameUtils {
-    public static String splitNameSpace(String pageName) {
-        return "\\u00A0" + pageName;
+    public static String trimName(String pageName) {
+        return pageName.replace(" ", " ");
     }
 
     public static String replaceNameSpace(String pageName) {
@@ -27,14 +27,14 @@ public class NameUtils {
      * get random Page Name
      */
     public static String getRandomPageName() {
-        return "Page " + NameUtils.getRandomString(3);
+        return "Page" + NameUtils.getRandomString(3);
     }
 
     /**
-     * get random Panel Name
+     * get random PanelSuper Name
      * @return
      */
-    public static String getRandomPanelName() { return "Panel " + NameUtils.getRandomString(3); }
+    public static String getRandomPanelName() { return "PanelSuper " + NameUtils.getRandomString(3); }
 
     /**
      * Get Random Name

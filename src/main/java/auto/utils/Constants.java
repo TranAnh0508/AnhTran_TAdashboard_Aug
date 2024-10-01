@@ -10,4 +10,6 @@ public class Constants {
     public static final String VALID_ACCOUNTS_PATH = "src/test/resources/data/ValidAccounts.json";
     public static final String MESSAGES_PATH = "src/test/resources/data/AlertMessages.json";
     public static final String PAGE_DEFAULT_PATH = "src/test/resources/data/DefaultPage.json";
+    public static final String PANEL_PATH = "src/test/resources/data/PanelList.json";
+
 }

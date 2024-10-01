@@ -29,7 +29,7 @@ public class NewPageDialog {
 
     public void selectParentPage(String parentPage) {
         if (!Objects.equals(parentPageNameDropList.getSelectedOption().getValue(), parentPage)) {
-            parentPageNameDropList.selectOptionByValue(parentPage);
+            parentPageNameDropList.selectOption(parentPage);
         }
     }
 

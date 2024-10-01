@@ -3,7 +3,7 @@ package auto.data.enums;
 public enum GlobalSettings {
     ADD_PAGE("Add Page"),
     CREATE_PROFILE("Create Profile"),
-    CREATE_PANEL("Create Panel"),
+    CREATE_PANEL("Create PanelSuper"),
     EDIT("Edit"),
     DELETE("Delete");
 

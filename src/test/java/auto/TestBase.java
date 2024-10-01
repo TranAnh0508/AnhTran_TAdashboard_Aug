@@ -17,11 +17,6 @@ public class TestBase {
     @BeforeClass(alwaysRun = true)
     @Parameters("browser")
     public void setUp(String browser) {
-//        Configuration.browser = "chrome";
-//        Configuration.timeout = 5000;
-//        open(Constants.DASHBOARD_URL);
-//        WebDriverRunner.getWebDriver().manage().window().maximize();
-
         if (browser.equalsIgnoreCase("edge")) {
             WebDriverManager.edgedriver().setup();
             EdgeOptions edgeOptions = new EdgeOptions();

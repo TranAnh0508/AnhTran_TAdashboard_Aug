@@ -2,5 +2,9 @@
   "validAccount1": {
     "username": "administrator",
     "password": ""
+  },
+  "validAccount2": {
+    "username": "administrator",
+    "password": ""
   }
 }

@@ -6,11 +6,12 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginPage {
     private final SelenideElement usernameTbx = $(By.id("username"));
     private final SelenideElement passwordTbx = $(By.id("password"));
-    private final SelenideElement loginBtn = $(By.xpath("//body//div[@class='btn-login']"));
+    private final SelenideElement loginBtn = $x("//body//div[@class='btn-login']");
 
     public void enterLoginInfo(String username, String password) {
         usernameTbx.setValue(username);
