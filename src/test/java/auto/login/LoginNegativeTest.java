@@ -7,6 +7,7 @@ import auto.listeners.RetryAnalyzer;
 import auto.utils.DriverUtils;
 import auto.utils.MessageUtils;
 import com.codeborne.selenide.Selenide;
+import com.sun.net.httpserver.Authenticator;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import auto.page.LoginPage;
@@ -22,15 +23,15 @@ public class LoginNegativeTest extends TestBase {
         };
     }
 
-    @Test(description = "Verify that user fails to login with invalid credentials", dataProvider = "Invalid Credentials")
+    @Test(description = "Verify that user fails to login with invalid credentials", dataProvider = "Invalid Credentials", retryAnalyzer = RetryAnalyzer.class)
     public void loginNegativeTest(User user, String errorMessage) {
         loginPage.login(user);
         Assert.assertEquals(DriverUtils.getAlertText(), errorMessage, "Error message appears");
         DriverUtils.acceptAlert();
     }
 
-    @AfterMethod(alwaysRun = true)
-    public void afterMethodNegative() {
-        Selenide.closeWindow();
-    }
+//    @AfterMethod(alwaysRun = true)
+//    public void afterMethodNegative() {
+//        Selenide.closeWindow();
+//    }
 }

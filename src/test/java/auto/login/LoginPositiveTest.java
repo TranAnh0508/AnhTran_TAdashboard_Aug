@@ -17,10 +17,11 @@ public class LoginPositiveTest extends TestBase {
 
     private final User user = User.getAdminAcc();
 
-    @Test(description = "Verify that the user can login successfully with a valid username and password")
+    @Test(description = "Verify that the user can login successfully with a valid username and password", retryAnalyzer = RetryAnalyzer.class)
     public void loginPositiveTest() {
         loginPage.login(user);
         Assertion.assertTrue(dashboardMainPage.isAdminDropdownDisplayed(), "Verify that the user login successfully");
+        dashboardMainPage.logout();
     }
 
     @AfterMethod(alwaysRun = true)

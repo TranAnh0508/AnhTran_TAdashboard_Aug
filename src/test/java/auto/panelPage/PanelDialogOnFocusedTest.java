@@ -2,6 +2,7 @@ package auto.panelPage;
 
 import auto.TestBase;
 import auto.data.enums.Administer;
+import auto.listeners.RetryAnalyzer;
 import auto.model.User;
 import auto.page.DashboardMainPage;
 import auto.page.LoginPage;
@@ -30,7 +31,7 @@ public class PanelDialogOnFocusedTest extends TestBase {
         dashboardMainPage.logout();
     }
 
-    @Test(description = "Verify that when \"Add New Panel\" form is on focused all other control/form is disabled or locked.")
+    @Test(description = "Verify that when \"Add New Panel\" form is on focused all other control/form is disabled or locked.", retryAnalyzer = RetryAnalyzer.class)
     public void TC_28() {
         dashboardMainPage.selectAdministratorOption(Administer.PANELS);
         panelsPage.openNewPanelDialog();

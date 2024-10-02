@@ -16,7 +16,7 @@ IntelliJ IDEA Community Edition (download here: https://www.jetbrains.com/idea/d
 + TestNG (visit here: https://mvnrepository.com/artifact/org.testng/testng)
 + Selenide (download here: https://selenide.org/2024/09/15/selenide-7.5.0/)
 
-### How to run the code
+## How to run the code
 1. Download source code (location, unzip,...)
 2. Open IntelliJ IDEA. ```File``` -> ```Open``` -> ```Select file``` -> ```New Window``` or ```This Window```
 3. Wait for dependencies to be installed (reimport if needed)
@@ -24,12 +24,14 @@ IntelliJ IDEA Community Edition (download here: https://www.jetbrains.com/idea/d
 5. Make sure the browser is on the correct version (updated if the version is too old)
 6. Run tests by commandline or using UI
 
-### How to get the results
+## How to get the results
 1. Run tests by commandline or using UI
-2. Enter '''allure serve allure-results''' into the Terminal and then press Enter
-3. You should see the results like this:
+2. After running the program, point to the current project 
+(e.g. E:\Logigear\SELENIUM 2\TranAnh_Sele2_Aug\AnhTran_TAdashboard_Aug>)
+3. Enter '''allure serve allure-results''' into the Terminal and then press Enter
+4. You should see the results like this:
    ![allure_results_samp![](C:\Users\OS\OneDrive - Danang University of Technology\Pictures\Screenshots\Screenshot 2024-10-01 225405.png)le.png](E:\Logigear\SELENIUM 2\TranAnh_Sele2_Aug\AnhTran_TAdashboard_Aug\src\main\resources\img.png)
-4. You can visit this website to get more information
+5. You can visit the result website to get more information
 
 ### The features are applied
 + Github: Gitflow
@@ -37,9 +39,3 @@ IntelliJ IDEA Community Edition (download here: https://www.jetbrains.com/idea/d
 + Code: Name convention, OOP, Json, Data driven
 + Report: Allure report
 + Parallel / Grid
-
-## Learn more about Selenium:
-Visit here: https://anhtester.com/blog/selenium-java?fbclid=IwAR2jNVW-mHyz9zxivz72ELF3TLrgJgO0ePR7jnKwVbqoD_65h3PJI7Ef8M8
-
-
-

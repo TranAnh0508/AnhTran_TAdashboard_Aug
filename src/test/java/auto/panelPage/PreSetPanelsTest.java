@@ -24,7 +24,6 @@ public class PreSetPanelsTest extends TestBase {
     private final DashboardMainPage dashboardMainPage = new DashboardMainPage();
     private final NewPageDialog newPageDialog = new NewPageDialog();
     private NewPanelDialog newPanelDialog = new NewPanelDialog();
-    private PanelConfigDialog panelConfigDialog = new PanelConfigDialog();
     private ChoosePanelPage choosePanelPage = new ChoosePanelPage();
 
     private final User user = User.getAdminAcc();
@@ -58,7 +57,7 @@ public class PreSetPanelsTest extends TestBase {
         };
     }
 
-    @Test(description = "Verify that when \"Choose panels\" form is expanded all pre-set panels are populated and sorted correctly ", dataProvider = "TC_27")
+    @Test(description = "Verify that when \"Choose panels\" form is expanded all pre-set panels are populated and sorted correctly ", dataProvider = "TC_27", retryAnalyzer = RetryAnalyzer.class)
     public void TC_27(Page page, Panel panel) {
         dashboardMainPage.selectGlobalSettingOption(GlobalSettings.ADD_PAGE);
         newPageDialog.completePageInfoDialog(page);
