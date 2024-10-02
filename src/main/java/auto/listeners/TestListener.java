@@ -41,5 +41,9 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         AllureManager.saveTextLog(result.getName() + " is failed.");
         AllureManager.saveScreenshotPNG();
+        Object currentRetryAnalyzer = result.getMethod().getRetryAnalyzer(result);
+        if (currentRetryAnalyzer == null) {
+            result.getMethod().setRetryAnalyzerClass(RetryAnalyzer.class);
+        }
     }
 }

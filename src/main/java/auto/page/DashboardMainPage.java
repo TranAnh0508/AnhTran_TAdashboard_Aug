@@ -96,6 +96,8 @@ public class DashboardMainPage {
             setSelectedPage(name).hover();
         }
         if (null != page) {
+            page.shouldBe(Condition.visible);
+            page.shouldBe(Condition.enabled);
             page.click();
         }
     }

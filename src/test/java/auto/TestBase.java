@@ -7,7 +7,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import auto.utils.Constants;
 import org.testng.annotations.Parameters;
@@ -35,7 +35,7 @@ public class TestBase {
         Configuration.reportsFolder = "allure-results";
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
         closeWebDriver();
     }

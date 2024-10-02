@@ -13,14 +13,12 @@ import auto.page.*;
 import auto.utils.Assertion;
 import auto.utils.JsonUtils;
 import auto.utils.NameUtils;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.Comparator;
 import java.util.List;
 
+@Listeners
 public class PreSetPanelsTest extends TestBase {
     private final LoginPage loginPage = new LoginPage();
     private final DashboardMainPage dashboardMainPage = new DashboardMainPage();
@@ -60,7 +58,7 @@ public class PreSetPanelsTest extends TestBase {
         };
     }
 
-    @Test(description = "Verify that when \"Choose panels\" form is expanded all pre-set panels are populated and sorted correctly ", dataProvider = "TC_27", retryAnalyzer = RetryAnalyzer.class)
+    @Test(description = "Verify that when \"Choose panels\" form is expanded all pre-set panels are populated and sorted correctly ", dataProvider = "TC_27")
     public void TC_27(Page page, Panel panel) {
         dashboardMainPage.selectGlobalSettingOption(GlobalSettings.ADD_PAGE);
         newPageDialog.completePageInfoDialog(page);

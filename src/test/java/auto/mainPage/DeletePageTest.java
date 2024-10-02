@@ -52,7 +52,7 @@ public class DeletePageTest extends TestBase {
         };
     }
 
-    @Test(description = "Verify that Public pages can be visible and accessed by all users of working repository", dataProvider = "tc17Data", retryAnalyzer = RetryAnalyzer.class)
+    @Test(description = "Verify that Public pages can be visible and accessed by all users of working repository", dataProvider = "tc17Data")
     public void visiblePageTest(Page parentPage, Page childPage) {
         dashboardMainPage.selectGlobalSettingOption(GlobalSettings.ADD_PAGE);
         newPageDialog.completePageInfoDialog(parentPage);
