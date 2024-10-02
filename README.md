@@ -28,7 +28,7 @@ IntelliJ IDEA Community Edition (download here: https://www.jetbrains.com/idea/d
 1. Run tests by commandline or using UI
 2. Enter '''allure serve allure-results''' into the Terminal and then press Enter
 3. You should see the results like this:
-![allure_results_samp![](C:\Users\OS\OneDrive - Danang University of Technology\Pictures\Screenshots\Screenshot 2024-10-01 225405.png)le.png](E:\Logigear\SELENIUM 2\TranAnh_Sele2_Aug\AnhTran_TAdashboard_Aug\src\main\resources\img.png)
+   ![allure_results_samp![](C:\Users\OS\OneDrive - Danang University of Technology\Pictures\Screenshots\Screenshot 2024-10-01 225405.png)le.png](E:\Logigear\SELENIUM 2\TranAnh_Sele2_Aug\AnhTran_TAdashboard_Aug\src\main\resources\img.png)
 4. You can visit this website to get more information
 
 ### The features are applied
