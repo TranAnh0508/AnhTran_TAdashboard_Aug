@@ -24,14 +24,36 @@ IntelliJ IDEA Community Edition (download here: https://www.jetbrains.com/idea/d
 5. Make sure the browser is on the correct version (updated if the version is too old)
 6. Run tests by commandline or using UI
 
+### Run tests with Maven from the Command Line
+- Run all TCs: 
+```mvn test```
+
+- Run tests with 'testng.xml' file: 
+```mvn clean test```
+
+- Run a specific class: 
+```mvn -Dtest=SampleTest test```
+
+- Run a method in a class: 
+```mvn -Dtest=SampleTest#methodName test```
+
+- Run with custom profile: 
+```mvn test -PprofileName```
+
 ## How to get the results
 1. Run tests by commandline or using UI
 2. After running the program, point to the current project 
 (e.g. E:\Logigear\SELENIUM 2\TranAnh_Sele2_Aug\AnhTran_TAdashboard_Aug>)
 3. Enter '''allure serve allure-results''' into the Terminal and then press Enter
 4. You should see the results like this:
-   ![allure_results_samp![](C:\Users\OS\OneDrive - Danang University of Technology\Pictures\Screenshots\Screenshot 2024-10-01 225405.png)le.png](E:\Logigear\SELENIUM 2\TranAnh_Sele2_Aug\AnhTran_TAdashboard_Aug\src\main\resources\img.png)
+
+   ![allure_results_samp![](E:\Logigear\SELENIUM 2\TranAnh_Sele2_Aug\AnhTran_TAdashboard_Aug\src\main\resources\img.png](E:\Logigear\SELENIUM 2\TranAnh_Sele2_Aug\AnhTran_TAdashboard_Aug\src\main\resources\img.png)
 5. You can visit the result website to get more information
+
+## Project Structure
+**\src\main\java\auto: contain constructor, pages
+**\src\test\java\auto: contain test cases
+**\src\main\resources: contain data, config file
 
 ### The features are applied
 + Github: Gitflow

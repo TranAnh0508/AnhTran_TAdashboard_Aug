@@ -23,6 +23,7 @@ public class LoginNegativeTest extends TestBase {
         };
     }
 
+    //Force failed to test the Test Retry
     @Test(description = "Verify that user fails to login with invalid credentials", dataProvider = "Invalid Credentials", retryAnalyzer = RetryAnalyzer.class)
     public void loginNegativeTest(User user, String errorMessage) {
         loginPage.login(user);
