@@ -7,7 +7,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class DashboardMainPage {
@@ -76,6 +75,7 @@ public class DashboardMainPage {
     }
 
     public void clickGlobalSettingOption(GlobalSettings option) {
+        setDynamicGlobalBtnOptions(option).shouldBe(Condition.visible);
         setDynamicGlobalBtnOptions(option).shouldBe(Condition.enabled);
         setDynamicGlobalBtnOptions(option).click();
     }
@@ -104,7 +104,7 @@ public class DashboardMainPage {
 
     public void deletePage(String... pageName) {
         selectPage(pageName);
-        clickGlobalSettingOption(GlobalSettings.DELETE);
+        selectGlobalSettingOption(GlobalSettings.DELETE);
     }
 
     public boolean isGlobalSettingOptionDisplayed(GlobalSettings option) {
@@ -118,7 +118,6 @@ public class DashboardMainPage {
 
     public boolean isChildPageDisplayed(String childPageName) {
         setSelectedChildPage(childPageName);
-        setSelectedChildPage(childPageName).shouldBe(Condition.visible);
         return setSelectedChildPage(childPageName).isDisplayed();
     }
 

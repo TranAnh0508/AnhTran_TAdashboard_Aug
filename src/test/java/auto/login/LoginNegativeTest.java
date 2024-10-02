@@ -14,7 +14,7 @@ import auto.page.LoginPage;
 
 @Listeners
 public class LoginNegativeTest extends TestBase {
-    private  LoginPage loginPage = new LoginPage();
+    private final LoginPage loginPage = new LoginPage();
 
     @DataProvider(name = "Invalid Credentials")
     public static Object[][] invalidAccounts() {

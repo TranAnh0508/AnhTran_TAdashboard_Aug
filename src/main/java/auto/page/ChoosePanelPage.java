@@ -4,7 +4,6 @@ import auto.data.enums.Administer;
 import auto.data.enums.PanelSettingTypes;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.stream.Collectors;

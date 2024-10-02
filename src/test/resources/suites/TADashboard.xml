@@ -18,11 +18,12 @@
         <parameter name="browser" value="chrome"/>
         <classes>
 <!--            <class name="auto.login.LoginPositiveTest"/>-->
-            <class name="auto.login.LoginNegativeTest"/>
+<!--            <class name="auto.login.LoginNegativeTest"/>-->
 <!--            <class name="auto.mainPage.VisiblePageTest"/>-->
 <!--            <class name="auto.mainPage.DeletePageTest"/>-->
-<!--            <class name="auto.panelPage.PreSetPanelsTest"></class>-->
-<!--            <class name="auto.panelPage.PanelDialogOnFocusedTest"></class>-->
+            <class name="auto.panelPage.PreSetPanelsTest"/>
+<!--            <class name="auto.panelPage.PanelDialogOnFocusedTest"/>-->
+<!--            <class name="auto.dataProfilePage.ListedProfilesTest"/>-->
         </classes>
     </test>
 

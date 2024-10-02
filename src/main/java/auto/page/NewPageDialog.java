@@ -4,11 +4,9 @@ import auto.model.Page;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 
 import java.util.Objects;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class NewPageDialog {
@@ -46,11 +44,7 @@ public class NewPageDialog {
     }
 
     public void checkIsPublic(boolean isPublic) {
-        if (isPublic) {
-            publicCbx.setSelected(true);
-        } else {
-            publicCbx.setSelected(false);
-        }
+        publicCbx.setSelected(isPublic);
     }
 
     public void clickDialogOkButton() {

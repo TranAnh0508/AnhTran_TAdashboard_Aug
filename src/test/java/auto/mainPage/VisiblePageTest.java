@@ -45,7 +45,7 @@ public class VisiblePageTest extends TestBase {
     }
 
     @Test(description = "Verify that Public pages can be visible and accessed by all users of working repository", dataProvider = "tc14Data", retryAnalyzer = RetryAnalyzer.class)
-    public void visiblePageTest(Page firstPageInfo) {
+    public void TC_14(Page firstPageInfo) {
         dashboardMainPage.selectGlobalSettingOption(GlobalSettings.ADD_PAGE);
         newPageDialog.completePageInfoDialog(firstPageInfo);
 

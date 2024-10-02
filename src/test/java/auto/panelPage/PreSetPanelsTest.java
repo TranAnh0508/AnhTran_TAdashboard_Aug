@@ -23,8 +23,8 @@ public class PreSetPanelsTest extends TestBase {
     private final LoginPage loginPage = new LoginPage();
     private final DashboardMainPage dashboardMainPage = new DashboardMainPage();
     private final NewPageDialog newPageDialog = new NewPageDialog();
-    private NewPanelDialog newPanelDialog = new NewPanelDialog();
-    private ChoosePanelPage choosePanelPage = new ChoosePanelPage();
+    private final NewPanelDialog newPanelDialog = new NewPanelDialog();
+    private final ChoosePanelPage choosePanelPage = new ChoosePanelPage();
 
     private final User user = User.getAdminAcc();
 

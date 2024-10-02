@@ -15,11 +15,11 @@ import org.testng.annotations.Test;
 
 @Listeners
 public class PanelDialogOnFocusedTest extends TestBase {
-    private LoginPage loginPage = new LoginPage();
-    private DashboardMainPage dashboardMainPage = new DashboardMainPage();
-    private PanelsPage panelsPage = new PanelsPage();
+    private final LoginPage loginPage = new LoginPage();
+    private final DashboardMainPage dashboardMainPage = new DashboardMainPage();
+    private final PanelsPage panelsPage = new PanelsPage();
 
-    private User user = User.getAdminAcc();
+    private final User user = User.getAdminAcc();
 
     @BeforeMethod(description = "Set up objects")
     public void setUpObjects() {

@@ -5,9 +5,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -45,10 +42,6 @@ public class PanelsPage {
     public void cancelDialog() {
         cancelBtn.shouldBe(Condition.enabled);
         cancelBtn.click();
-    }
-
-    public boolean isSettingTypesDisplayed(PanelSettingTypes type) {
-        return setDynamicSettingsForms(type).isDisplayed();
     }
 
     public void openEditPanelDialog(String panelName) {

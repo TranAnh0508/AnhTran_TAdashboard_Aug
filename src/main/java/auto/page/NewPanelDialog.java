@@ -1,6 +1,5 @@
 package auto.page;
 
-import auto.data.enums.Administer;
 import auto.data.enums.PanelSettingTypes;
 import auto.model.Panel;
 import com.codeborne.selenide.Condition;
@@ -12,7 +11,6 @@ import java.util.Objects;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class NewPanelDialog {
-    //Display Settings
     private final String typeRadioBtn = "//div[@id='div_panelPopup']//label[contains(text(), '%s')]/input";
     private final SelenideElement dataProfileDropList = $x("//select[@id='cbbProfile']");
     private final SelenideElement displayNameTextBox = $x("//input[@name='txtDisplayName']");
@@ -20,7 +18,6 @@ public class NewPanelDialog {
     private final SelenideElement okPanelConfigPopupBtn = $x("//div[@aria-labelledby='ui-dialog-title-div_panelConfigurationDlg']//input[@id='OK']");
     private final SelenideElement cancelPanelConfigPopupBtn = $x("//div[@aria-labelledby='ui-dialog-title-div_panelConfigurationDlg']//input[@id='Cancel']");
 
-    //Chart Settings
     private final SelenideElement chartTitleTextBox = $x("//input[@id='txtChartTitle']");
     private final SelenideElement seriesDropList = $x("//select[@id='cbbSeriesField']");
 
@@ -39,9 +36,10 @@ public class NewPanelDialog {
             displayNameTextBox.setValue(displayName);
         }
     }
+
     public void selectSeries(String series) {
         if (!Objects.equals(seriesDropList.getSelectedOption().getValue(), series)) {
-            seriesDropList.selectOption(series);
+            seriesDropList.selectOptionContainingText(series);
         }
     }
 
