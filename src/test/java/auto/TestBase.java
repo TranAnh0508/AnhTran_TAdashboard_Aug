@@ -17,17 +17,19 @@ public class TestBase {
     @BeforeClass(alwaysRun = true)
     @Parameters("browser")
     public void setUp(String browser) {
-        if (browser.equalsIgnoreCase("edge")) {
-            WebDriverManager.edgedriver().setup();
-            EdgeOptions edgeOptions = new EdgeOptions();
-            Configuration.browser = "edge";
-            Configuration.browserCapabilities = edgeOptions;
-        } else if (browser.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions chromeOptions = new ChromeOptions();
-            Configuration.browser = "chrome";
-            Configuration.browserCapabilities = chromeOptions;
-        }
+//        if (browser.equalsIgnoreCase("edge")) {
+//            WebDriverManager.edgedriver().setup();
+//            EdgeOptions edgeOptions = new EdgeOptions();
+//            Configuration.browser = "edge";
+//            Configuration.browserCapabilities = edgeOptions;
+//        } else if (browser.equalsIgnoreCase("chrome")) {
+//            WebDriverManager.chromedriver().setup();
+//            ChromeOptions chromeOptions = new ChromeOptions();
+//            Configuration.browser = "chrome";
+//            Configuration.browserCapabilities = chromeOptions;
+//        }
+
+        Configuration.browser = browser;
 
         Configuration.timeout = 5000;
         open(Constants.DASHBOARD_URL);
