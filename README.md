@@ -47,14 +47,18 @@ IntelliJ IDEA Community Edition (download here: https://www.jetbrains.com/idea/d
 3. Enter '''allure serve allure-results''' into the Terminal and then press Enter
 4. You should see the results like this:
 
-   ![allure_results_samp!](src/main/resources/img.png)
+   ![allure_results_samp!](src/main/resources/Allure_Results.png)
 5. You can visit the result website to get more information
 
 ## How to run Selenium Grid
-1. Create hub: java -jar selenium-server-4.25.0.jar hub
-2. Create node(s): java -jar selenium-server-4.25.0.jar node  --selenium-manager true
-3. Enter to Hub server: http://localhost:4444/ui/#
-4. 
+1. Create hub: enter the following string in the first cmd
+```java -jar selenium-server-4.25.0.jar hub```
+2. Create node(s): enter the following string in the second cmd or more
+```java -jar selenium-server-4.25.0.jar node  --selenium-manager true```
+3. Enter to localhost: 
+```http://localhost:4444/ui/#``` (default)
+   ![selenium_grid_sample!](src/main/resources/Selenium_Grid.png)
+4. Run test cases as usual and observe the localhost site
 
 ## Project Structure
 **\src\main\java\auto: contain constructor, pages
