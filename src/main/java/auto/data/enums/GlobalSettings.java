@@ -7,7 +7,7 @@ public enum GlobalSettings {
     EDIT("Edit"),
     DELETE("Delete");
 
-    private String value;
+    private final String value;
 
     GlobalSettings(String value) { this.value = value; }
 

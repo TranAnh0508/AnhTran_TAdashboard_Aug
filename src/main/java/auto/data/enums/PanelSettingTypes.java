@@ -6,7 +6,7 @@ public enum PanelSettingTypes {
     REPORT("Report"),
     HEAT_MAP("Heat Map");
 
-    private String value;
+    private final String value;
 
     PanelSettingTypes(String value) { this.value = value; }
 

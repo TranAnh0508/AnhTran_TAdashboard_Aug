@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class PanelsPage {
     private final SelenideElement addNewBtn = $x("//a[@href=\"javascript:Dashboard.openAddPanel('');\"]");
-    private final String editLinks = "//a[text()='%s']//ancestor::td//following-sibling::td/a[text()='Edit']";
     private final SelenideElement okPopupBtn = $x("//input[@id='OK']");
     private final SelenideElement cancelBtn = $x("//input[@id='Cancel']");
     private final ElementsCollection allControlBtn = $$x("//div[@id = 'main-menu']//a");
@@ -24,6 +23,7 @@ public class PanelsPage {
     }
 
     private SelenideElement setDynamicEditLinks(String panelName) {
+        String editLinks = "//a[text()='%s']//ancestor::td//following-sibling::td/a[text()='Edit']";
         return $x(String.format(editLinks, panelName));
     }
 

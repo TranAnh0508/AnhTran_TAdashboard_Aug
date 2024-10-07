@@ -1,9 +1,9 @@
 package auto.panelPage;
 
 import auto.TestBase;
-import auto.data.enums.ChartSeries;
 import auto.data.enums.GlobalSettings;
 import auto.data.enums.PanelSettingTypes;
+import auto.data.provider.DataPreSetPanelTest;
 import auto.listeners.RetryAnalyzer;
 import auto.utils.Constants;
 import auto.model.Page;
@@ -12,7 +12,6 @@ import auto.model.User;
 import auto.page.*;
 import auto.utils.Assertion;
 import auto.utils.JsonUtils;
-import auto.utils.NameUtils;
 import org.testng.annotations.*;
 
 import java.util.Comparator;
@@ -38,26 +37,7 @@ public class PreSetPanelsTest extends TestBase {
         dashboardMainPage.logout();
     }
 
-    @DataProvider(name = "TC_27")
-    public static Object[][] tc27Data() {
-        Page page;
-        Panel panel;
-
-        page = Page.builder()
-                .pageName(NameUtils.getRandomPageName())
-                .isPublic(false)
-                .build();
-        panel = Panel.builder()
-                .displayName(NameUtils.getRandomPanelName())
-                .series(ChartSeries.NAME)
-                .build();
-
-        return new Object[][]{
-                {page, panel}
-        };
-    }
-
-    @Test(description = "Verify that when \"Choose panels\" form is expanded all pre-set panels are populated and sorted correctly ", dataProvider = "TC_27", retryAnalyzer = RetryAnalyzer.class)
+    @Test(description = "Verify that when \"Choose panels\" form is expanded all pre-set panels are populated and sorted correctly ", dataProvider = "TC_27", dataProviderClass = DataPreSetPanelTest.class,retryAnalyzer = RetryAnalyzer.class)
     public void TC_27(Page page, Panel panel) {
         dashboardMainPage.selectGlobalSettingOption(GlobalSettings.ADD_PAGE);
         newPageDialog.completePageInfoDialog(page);

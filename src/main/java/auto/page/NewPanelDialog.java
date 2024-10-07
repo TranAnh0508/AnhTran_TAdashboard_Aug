@@ -11,7 +11,6 @@ import java.util.Objects;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class NewPanelDialog {
-    private final String typeRadioBtn = "//div[@id='div_panelPopup']//label[contains(text(), '%s')]/input";
     private final SelenideElement dataProfileDropList = $x("//select[@id='cbbProfile']");
     private final SelenideElement displayNameTextBox = $x("//input[@name='txtDisplayName']");
     private final String settingsForms = "//div[@id='tdSettings']//legend[text()='%s Settings']";
@@ -25,6 +24,7 @@ public class NewPanelDialog {
      * Set value for dynamic xpath
      */
     private SelenideElement getDynamicTypeRadioBtn(PanelSettingTypes option) {
+        String typeRadioBtn = "//div[@id='div_panelPopup']//label[contains(text(), '%s')]/input";
         return $x(String.format(typeRadioBtn, option.value()));
     }
 

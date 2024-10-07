@@ -16,7 +16,7 @@ public enum ChartSeries {
     NOTES("Notes"),
     URL("URL");
 
-    private String value;
+    private final String value;
 
     ChartSeries(String value) { this.value = value; }
 

@@ -43,7 +43,6 @@ IntelliJ IDEA Community Edition (download here: https://www.jetbrains.com/idea/d
 ## How to get the results
 1. Run tests by commandline or using UI
 2. After running the program, point to the current project 
-(e.g. E:\Logigear\SELENIUM 2\TranAnh_Sele2_Aug\AnhTran_TAdashboard_Aug>)
 3. Enter '''allure serve allure-results''' into the Terminal and then press Enter
 4. You should see the results like this:
 
@@ -62,7 +61,9 @@ IntelliJ IDEA Community Edition (download here: https://www.jetbrains.com/idea/d
 
 ## Project Structure
 **\src\main\java\auto: contain constructor, pages
+
 **\src\test\java\auto: contain test cases
+
 **\src\main\resources: contain data, config file
 
 ### The features are applied

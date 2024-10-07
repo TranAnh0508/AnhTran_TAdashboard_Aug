@@ -1,6 +1,5 @@
 package auto.page;
 
-import auto.data.enums.Administer;
 import auto.data.enums.PanelSettingTypes;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -22,14 +21,8 @@ public class ChoosePanelPage {
         return $$x(String.format(panelLinkList, option));
     }
 
-    private SelenideElement setPanelLink(Administer option) {
-        String panelLink = "//div[text()='%s']//following-sibling::table//a[text()='%s']";
-        return $x(String.format(panelLink, option.value()));
-    }
-
     public List<String> getPanelLinkList(PanelSettingTypes option) {
-        List<String> panelList = setPanelLinkList(option.value() + "s").stream().map(SelenideElement::getText).collect(Collectors.toList());
-        return panelList;
+        return setPanelLinkList(option.value() + "s").stream().map(SelenideElement::getText).collect(Collectors.toList());
     }
 
     public boolean isLinkListPopulatedCorrectly(List<String> panelLinkList, List<String> correctLinkList) {

@@ -2,15 +2,17 @@ package auto.mainPage;
 
 import auto.TestBase;
 import auto.data.enums.GlobalSettings;
+import auto.data.provider.DataVisiblePageTest;
+import auto.listeners.RetryAnalyzer;
 import auto.model.Page;
 import auto.model.User;
 import auto.page.DashboardMainPage;
 import auto.page.LoginPage;
 import auto.page.NewPageDialog;
-import auto.listeners.RetryAnalyzer;
-import auto.utils.Assertion;
-import auto.utils.NameUtils;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
 @Listeners
 public class VisiblePageTest extends TestBase {
@@ -30,21 +32,7 @@ public class VisiblePageTest extends TestBase {
         dashboardMainPage.logout();
     }
 
-    @DataProvider(name = "tc14Data")
-    public static Object[][] tc14Data() {
-        Page firstPageInfo;
-
-        firstPageInfo = Page.builder()
-                .pageName(NameUtils.getRandomPageName())
-                .isPublic(true)
-                .build();
-
-        return new Object[][]{
-                {firstPageInfo}
-        };
-    }
-
-    @Test(description = "Verify that Public pages can be visible and accessed by all users of working repository", dataProvider = "tc14Data", retryAnalyzer = RetryAnalyzer.class)
+    @Test(description = "Verify that Public pages can be visible and accessed by all users of working repository", dataProvider = "TC_14", dataProviderClass = DataVisiblePageTest.class, retryAnalyzer = RetryAnalyzer.class)
     public void TC_14(Page firstPageInfo) {
         dashboardMainPage.selectGlobalSettingOption(GlobalSettings.ADD_PAGE);
         newPageDialog.completePageInfoDialog(firstPageInfo);
@@ -52,6 +40,7 @@ public class VisiblePageTest extends TestBase {
         dashboardMainPage.logout();
 
         loginPage.login(user);
-        Assertion.assertTrue(dashboardMainPage.isPageDisplayed(firstPageInfo.getTrimPageName()), "Newly added page is visible");
+        dashboardMainPage.verifyPageDisplayed(firstPageInfo.getTrimPageName());
+//        Assertion.assertTrue(dashboardMainPage.verifyPageDisplayed(firstPageInfo.getTrimPageName()), "Newly added page is visible");
     }
 }

@@ -25,13 +25,11 @@ public class TestListener implements ITestListener {
                 result.getMethod().getDescription());
     }
 
-    // Chụp và đính kèm ảnh màn hình vào Allure Report
     @Attachment(value = "Screenshot on Failure", type = "image/png")
     public byte[] attachScreenshot() {
         return ((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
-    // Đính kèm mã nguồn của trang hiện tại vào Allure Report
     @Attachment(value = "Page Source", type = "text/html")
     public String attachPageSource() {
         return WebDriverRunner.getWebDriver().getPageSource();

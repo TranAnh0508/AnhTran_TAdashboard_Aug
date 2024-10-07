@@ -2,7 +2,6 @@ package auto.page;
 
 import auto.data.enums.Administer;
 import auto.data.enums.GlobalSettings;
-import auto.utils.NameUtils;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -12,43 +11,43 @@ import static com.codeborne.selenide.Selenide.$x;
 public class DashboardMainPage {
     private final SelenideElement administratorDrop = $x("//div[@class='container']//li//a[@href='#Welcome']");
     private final SelenideElement administerDrop = $x("//div[@class='container']//li//a[@href='#Administer']");
-    private final String dynamicAdministerDropOptions = "//ul[@id='ulAdminister']//a[text()='%s']";
     private final SelenideElement logoutBtn = $x("//a[@href='logout.do']");
 
     private final SelenideElement choosePanelBtn = $x("//a[@id='btnChoosepanel']");
     private final SelenideElement globalBtn = $x("//li[@class='mn-setting']");
-    private final String dynamicGlobalBtnOptions = "//li[@class='mn-setting']//a[text()='%s']";
-    private final SelenideElement newCreatedPage = $x("//a[text()='Overview']/following::a[1]");
 
-    private final String pageSelected = "//div[@id='main-menu']//a[text()='%s']";
     private final String pageNextPage = "//div[@id='main-menu']//li[a[text()='%s']]/following-sibling::li[a[text()='%s']]";
     private final String pageChildPage = "//div[@id='main-menu']//a[text()='%s']//ancestor::li//following::li//a[text()='%s']";
-    private final String childPageSelected = "//div[@id='main-menu']//li[contains(@class,'haschild')]//li/a[text()='%s']"; //Test Child
 
     /**
      * Set value for dynamic xpath
      */
     private SelenideElement setDynamicAdministerDropOptions(Administer option) {
+        String dynamicAdministerDropOptions = "//ul[@id='ulAdminister']//a[text()='%s']";
         return $x(String.format(dynamicAdministerDropOptions, option.value()));
     }
 
     private SelenideElement setDynamicGlobalBtnOptions(GlobalSettings option) {
+        String dynamicGlobalBtnOptions = "//li[@class='mn-setting']//a[text()='%s']";
         return $x(String.format(dynamicGlobalBtnOptions, option.value()));
     }
 
     private SelenideElement setSelectedPage(String pageName) {
+        String pageSelected = "//div[@id='main-menu']//a[text()='%s']";
         return $x(String.format(pageSelected, pageName));
     }
 
-    private SelenideElement setPageNextPage(String previousPage, String nextPage) {
-        return $x(String.format(pageNextPage, NameUtils.trimName(previousPage), NameUtils.trimName(nextPage)));
-    }
-
-    private SelenideElement setPageChildPage(String parentPage, String childPage) {
-        return $x(String.format(pageChildPage, NameUtils.trimName(parentPage), NameUtils.trimName(childPage)));
-    }
+//    private SelenideElement setPageNextPage(String previousPage, String nextPage) {
+//        return $x(String.format(pageNextPage, NameUtils.trimName(previousPage), NameUtils.trimName(nextPage)));
+//    }
+//
+//    private SelenideElement setPageChildPage(String parentPage, String childPage) {
+//        return $x(String.format(pageChildPage, NameUtils.trimName(parentPage), NameUtils.trimName(childPage)));
+//    }
 
     private SelenideElement setSelectedChildPage(String childPageName) {
+        //Test Child
+        String childPageSelected = "//div[@id='main-menu']//li[contains(@class,'haschild')]//li/a[text()='%s']";
         return $x(String.format(childPageSelected, childPageName));
     }
 
@@ -61,9 +60,9 @@ public class DashboardMainPage {
     }
 
     @Step("Check the Administrator dropdown is existed")
-    public boolean isAdminDropdownDisplayed() {
+    public void verifyAdminDropdownDisplayed() {
+        administratorDrop.shouldBe(Condition.visible);
         administratorDrop.shouldBe(Condition.enabled);
-        return administratorDrop.isDisplayed();
     }
 
     /**
@@ -107,18 +106,16 @@ public class DashboardMainPage {
         selectGlobalSettingOption(GlobalSettings.DELETE);
     }
 
-    public boolean isGlobalSettingOptionDisplayed(GlobalSettings option) {
-        return setDynamicGlobalBtnOptions(option).isDisplayed();
+    public void verifyGlobalSettingOptionDisplayed(GlobalSettings option) {
+        setDynamicGlobalBtnOptions(option).shouldBe(Condition.visible);
     }
 
-    public boolean isPageDisplayed(String pageName) {
+    public void verifyPageDisplayed(String pageName) {
         setSelectedPage(pageName).shouldBe(Condition.visible);
-        return setSelectedPage(pageName).isDisplayed();
     }
 
-    public boolean isChildPageDisplayed(String childPageName) {
-        setSelectedChildPage(childPageName);
-        return setSelectedChildPage(childPageName).isDisplayed();
+    public void verifyChildPageDisplayed(String childPageName) {
+        setSelectedChildPage(childPageName).shouldBe(Condition.visible);
     }
 
     /**
