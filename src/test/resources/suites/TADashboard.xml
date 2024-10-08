@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite configfailurepolicy="continue" name="Test Suite" parallel="methods" thread-count="3">
+<suite configfailurepolicy="continue" name="Test Suite" parallel="classes" thread-count="3">
     <listeners>
         <listener class-name="auto.listeners.TestListener"/>
         <listener class-name="auto.listeners.RetryListener" />
@@ -9,21 +9,15 @@
     <test name="ChromeTests">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="auto.login.LoginPositiveTest"/>
-<!--            <class name="auto.login.LoginNegativeTest"/>-->
-<!--            <class name="auto.mainPage.VisiblePageTest"/>-->
-<!--            <class name="auto.mainPage.DeletePageTest"/>-->
-<!--            <class name="auto.panelPage.PreSetPanelsTest"/>-->
-<!--            <class name="auto.panelPage.PanelDialogOnFocusedTest"/>-->
-<!--            <class name="auto.dataProfilePage.ListedProfilesTest"/>-->
+<!--            <class name="auto.TestCase01"/>-->
+            <class name="auto.TestCase02"/>
         </classes>
     </test>
 
 <!--    <test name="EdgeTests">-->
 <!--        <parameter name="browser" value="edge"/>-->
 <!--        <classes>-->
-<!--            <class name="auto.login.LoginPositiveTest"/>-->
-<!--            <class name="auto.login.LoginNegativeTest"/>-->
+<!--            <class name="auto.TestCase01"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
