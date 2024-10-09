@@ -38,23 +38,17 @@ public class AllFilter {
     }
 
     public void chooseSupplier(String input) {
-        Selenide.executeJavaScript(getScrollString(setSupplierXpathString(input)));
+        setDynamicSupplier(input).scrollTo();
         setDynamicSupplier(input).setSelected(true);
     }
 
     public void enterMinPrice(int input) {
-        Selenide.executeJavaScript(
-                "document.evaluate(\"//div[contains(@class,'styles__StyledContentModal-sc')]\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollTop = " +
-                        "document.evaluate(\"//input[@placeholder='Từ']\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.offsetTop;"
-        );
+        priceMin.scrollTo();
         priceMin.setValue(String.valueOf(input));
     }
 
     public void enterMaxPrice(int input) {
-        Selenide.executeJavaScript(
-                "document.evaluate(\"//div[contains(@class,'styles__StyledContentModal-sc')]\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollTop = " +
-                        "document.evaluate(\"//input[@placeholder='Đến']\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.offsetTop;"
-        );
+        priceMax.scrollTo();
         priceMax.setValue(String.valueOf(input));
     }
 
