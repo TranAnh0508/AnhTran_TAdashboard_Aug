@@ -17,7 +17,7 @@
 <!--    <test name="EdgeTests">-->
 <!--        <parameter name="browser" value="edge"/>-->
 <!--        <classes>-->
-<!--            <class name="auto.TestCase01"/>-->
+<!--            <class name="auto.TestCase01_Old_Old"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 

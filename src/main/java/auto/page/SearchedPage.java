@@ -9,12 +9,13 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SearchedPage {
+    private final SelenideElement headerLogo = $x("//a[@data-view-id='header_main_logo']");
     private final SelenideElement breadcrumb = $x("//div[@class='breadcrumb']");
     private final ElementsCollection productList = $$x("//div[contains(@class,'CatalogProducts__Wrapper')]//a");
     private final ElementsCollection productName = $$x("//h3[contains(@class,'style__NameStyled')]");
     private final ElementsCollection productPrice = $$x("//div[@class = 'price-discount__price']");
-
     private final SelenideElement allFilterBtn = $x("//div[text()='Tất cả']");
+    private final ElementsCollection recentlyViewProduct = $$x("//div[@data-view-id='product_list_recently_view_container']");
 
     /**
      * Set value for dynamic xpath
@@ -58,6 +59,11 @@ public class SearchedPage {
         allFilterBtn.click();
     }
 
+    @Step("Go back to Home page")
+    public void goToHomePage() {
+        headerLogo.click();
+    }
+
     public boolean verifyAllProductNames(String input) {
         for (SelenideElement nameElement : productName) {
             String name = nameElement.getText();
@@ -68,20 +74,19 @@ public class SearchedPage {
         return true;
     }
 
-    public boolean areAllProductPricesInRange(int min, int max) {
+    public boolean verifyAllProductPricesInRange(int min, int max) {
         for (SelenideElement priceElement : productPrice) {
-            String priceText = priceElement.getText().replace(",", "").trim();  // Lấy giá, loại bỏ dấu phẩy và khoảng trắng
+            String priceText = priceElement.getText().replace(",", "").trim();
             int price;
             try {
-                price = Integer.parseInt(priceText);  // Chuyển đổi giá sang số nguyên
+                price = Integer.parseInt(priceText);
             } catch (NumberFormatException e) {
-                // Nếu không thể chuyển giá thành số, trả về false ngay lập tức
                 return false;
             }
-            if (price < min || price > max) {  // Kiểm tra nếu giá không nằm trong khoảng 1000-1700
-                return false;  // Nếu bất kỳ giá nào không nằm trong khoảng, trả về false
+            if (price < min || price > max) {
+                return false;
             }
         }
-        return true;  // Trả về true nếu tất cả giá đều nằm trong khoảng
+        return true;
     }
 }
