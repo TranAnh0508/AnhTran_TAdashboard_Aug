@@ -6,8 +6,8 @@ import static com.codeborne.selenide.Selenide.*;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import auto.utils.Constants;
 import org.testng.annotations.Parameters;
+import auto.utils.Constants;
 
 public class TestBase {
 
@@ -21,7 +21,7 @@ public class TestBase {
         }
 
         Configuration.timeout = 5000;
-        open(Constants.DASHBOARD_URL);
+        open(Constants.TIKI_URL);
         WebDriverRunner.getWebDriver().manage().window().maximize();
         Configuration.reportsFolder = "allure-results";
     }

@@ -1,9 +1,0 @@
-{
-  "defaultPage": {
-    "pageName": "",
-    "parentPage": "Select parent",
-    "numberOfColumns": 2,
-    "displayAfter": "Overview",
-    "isPublic": false
-  }
-}
