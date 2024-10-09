@@ -36,7 +36,6 @@ public class TestCase01 extends TestBase{
         allFilter.enterPriceRange(minPrice, maxPrice);
         allFilter.clickOnViewResult();
 
-        //
         searchedPage.waitForPageLoad();
         Assertion.assertTrue(searchedPage.areAllProductPricesInRange(minPrice, maxPrice), "The price is not in range");
     }

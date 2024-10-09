@@ -7,8 +7,10 @@ import auto.page.SelectedProductPage;
 import auto.page.TikiMainPage;
 import auto.utils.Assertion;
 import auto.utils.ListUtils;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners
 public class TestCase02 extends TestBase{
     private final TikiMainPage tikiMainPage = new TikiMainPage();
     private final SearchedPage searchedPage = new SearchedPage();
