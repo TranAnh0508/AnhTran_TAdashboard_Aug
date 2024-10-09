@@ -83,6 +83,6 @@ public class SearchedPage {
                 return true;
             }
         }
-        return true;
+        return false;
     }
 }
