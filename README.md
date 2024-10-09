@@ -1,7 +1,7 @@
-## TA-DASHBOARD AUTOMATION REPOSITORY
+## TIKI AUTOMATION REPOSITORY
 
 ## Summary
-This repository is used to test the [Dashboard](http://localhost:54000/TADashboard/login.jsp) website
+This repository is used to test the [Tiki](https://tiki.vn/) website
 
 ## Prerequisites
 

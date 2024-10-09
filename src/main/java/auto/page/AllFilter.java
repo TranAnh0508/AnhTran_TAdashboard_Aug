@@ -26,24 +26,6 @@ public class AllFilter {
         return $x(filterPopup);
     }
 
-//    // Lấy chuỗi xpath của Supplier
-//    private String getSupplierXpath(String input) {
-//        return String.format(supplierCheckBox, input);
-//    }
-//
-//    // Hàm scroll đến phần tử cụ thể
-//    private String getScrollToElementScript(String targetElementXpath) {
-//        return "var container = document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;" +
-//                "var target = document.evaluate(arguments[1], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;" +
-//                "if (container && target) container.scrollTop = target.offsetTop;";
-//    }
-//
-//    public void chooseSupplier(String input) {
-//        String supplierXpath = getSupplierXpath(input);
-//        Selenide.executeJavaScript(getScrollToElementScript(supplierXpath), filterPopup, supplierXpath);
-//        setDynamicSupplier(input).setSelected(true);
-//    }
-
     //Lấy chuỗi xpath của Supplier
     private String setSupplierXpathString(String input) {
         return String.format(supplierCheckBox, input);
