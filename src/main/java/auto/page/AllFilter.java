@@ -1,44 +1,64 @@
 package auto.page;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class AllFilter {
     private final SelenideElement filterDialogTitle = $x("//div[text()='Tất cả bộ lọc']");
+    private final String supplierCheckBox = "//span[text()='%s']/parent::div//preceding-sibling::div"; ///span[@class='box']
     private final SelenideElement priceMin = $x("//input[@placeholder='Từ']");
     private final SelenideElement priceMax = $x("//input[@placeholder='Đến']");
     private final SelenideElement viewResultButton = $x("//div[text()='Xem kết quả']");
-    private final SelenideElement filterPopup = $x("//div[contains(@class,'styles__StyledContentModal-sc')]");
+    private final String filterPopup = "//div[contains(@class,'styles__StyledContentModal-sc')]";
 
     /**
      * Set value for dynamic xpath
      */
     private SelenideElement setDynamicSupplier(String input) {
-        String supplierCheckBox = "//div[text()='Nhà cung cấp']//following-sibling::div/button/div[text()='%s']";
         return $x(String.format(supplierCheckBox, input));
     }
 
-    private String getScrollString(String popup, String element) {
-        String scrollString = "document.evaluate(\"%s\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollTop = " +
-                "document.evaluate(\"%s\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.offsetTop;";
-        return String.format(scrollString, popup, element);
+    private SelenideElement setFilterPopup() {
+        return $x(filterPopup);
     }
 
-    public void verifyAllFilterDialogDisplay() {
-        filterDialogTitle.shouldBe(Condition.visible);
+//    // Lấy chuỗi xpath của Supplier
+//    private String getSupplierXpath(String input) {
+//        return String.format(supplierCheckBox, input);
+//    }
+//
+//    // Hàm scroll đến phần tử cụ thể
+//    private String getScrollToElementScript(String targetElementXpath) {
+//        return "var container = document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;" +
+//                "var target = document.evaluate(arguments[1], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;" +
+//                "if (container && target) container.scrollTop = target.offsetTop;";
+//    }
+//
+//    public void chooseSupplier(String input) {
+//        String supplierXpath = getSupplierXpath(input);
+//        Selenide.executeJavaScript(getScrollToElementScript(supplierXpath), filterPopup, supplierXpath);
+//        setDynamicSupplier(input).setSelected(true);
+//    }
+
+    //Lấy chuỗi xpath của Supplier
+    private String setSupplierXpathString(String input) {
+        return String.format(supplierCheckBox, input);
+    }
+
+    private String getScrollString(String element) {
+        String scrollString = "document.evaluate(\"%s\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollTop = " +
+                "document.evaluate(\"%s\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.offsetTop;";
+        return String.format(scrollString, "//div[contains(@class,'styles__StyledContentModal-sc')]", element);
     }
 
     public void chooseSupplier(String input) {
-
+        Selenide.executeJavaScript(getScrollString(setSupplierXpathString(input)));
         setDynamicSupplier(input).setSelected(true);
     }
-
 
     public void enterMinPrice(int input) {
         Selenide.executeJavaScript(
@@ -65,5 +85,9 @@ public class AllFilter {
     @Step("Click on Xem kết quả")
     public void clickOnViewResult() {
         viewResultButton.click();
+    }
+
+    public void verifyAllFilterDialogDisplay() {
+        filterDialogTitle.shouldBe(Condition.visible);
     }
 }

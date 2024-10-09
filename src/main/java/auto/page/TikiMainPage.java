@@ -1,6 +1,5 @@
 package auto.page;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -35,13 +34,5 @@ public class TikiMainPage {
 
     public void clickOnCategory(String input) {
         setDynamicCategoryLinks(input).click();
-    }
-
-    public void verifySearchTbxDisplayed() {
-        searchTbx.shouldBe(Condition.visible);
-    }
-
-    public void verifySearchBtnDisplayed() {
-        searchBtn.shouldBe(Condition.visible);
     }
 }

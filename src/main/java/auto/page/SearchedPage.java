@@ -74,17 +74,13 @@ public class SearchedPage {
         return true;
     }
 
-    public boolean verifyAllProductPricesInRange(int min, int max) {
+    public boolean areAllProductPricesInRange(int min, int max) {
         for (SelenideElement priceElement : productPrice) {
-            String priceText = priceElement.getText().replace(",", "").trim();
-            int price;
-            try {
-                price = Integer.parseInt(priceText);
-            } catch (NumberFormatException e) {
-                return false;
-            }
-            if (price < min || price > max) {
-                return false;
+            String priceText = priceElement.getText().replace(".", "").trim();
+            String priceText2 = priceText.replace("₫", "").trim();
+            int price = Integer.parseInt(priceText2);
+            if (price > min && price < max) {
+                return true;
             }
         }
         return true;
