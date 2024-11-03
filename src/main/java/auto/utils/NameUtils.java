@@ -23,23 +23,14 @@ public class NameUtils {
         return RandomStringUtils.randomAlphanumeric(length);
     }
 
-    /**
-     * get random Page Name
-     */
     public static String getRandomPageName() {
         return "Page" + NameUtils.getRandomString(3);
     }
 
-    /**
-     * get random PanelSuper Name
-     */
     public static String getRandomPanelName() {
         return "Panel " + NameUtils.getRandomString(3);
     }
 
-    /**
-     * Get Random Name
-     */
     public static String getRandomName(String objectName, int number) {
         return objectName + getRandomString(number);
     }
