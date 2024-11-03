@@ -6,7 +6,11 @@ public enum Administer {
 
     private final String value;
 
-    Administer(String value) { this.value = value; }
+    Administer(String value) {
+        this.value = value;
+    }
 
-    public String value() { return value; }
+    public String value() {
+        return value;
+    }
 }

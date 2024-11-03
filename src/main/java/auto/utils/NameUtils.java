@@ -33,7 +33,9 @@ public class NameUtils {
     /**
      * get random PanelSuper Name
      */
-    public static String getRandomPanelName() { return "Panel " + NameUtils.getRandomString(3); }
+    public static String getRandomPanelName() {
+        return "Panel " + NameUtils.getRandomString(3);
+    }
 
     /**
      * Get Random Name

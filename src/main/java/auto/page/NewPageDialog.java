@@ -16,11 +16,7 @@ public class NewPageDialog {
     private final SelenideElement displayAfterDropList = $x("//select[@id='afterpage']");
     private final SelenideElement publicCbx = $x("//input[@id='ispublic']");
     private final SelenideElement okPopupBtn = $x("//input[@id='OK']");
-    private final SelenideElement cancelBtn = $x("//input[@id='Cancel']");
 
-    /**
-     * The steps to fill the New Page Dialog
-     */
     public void enterPageName(String pageName) {
         pageNameTbx.setValue(pageName);
     }

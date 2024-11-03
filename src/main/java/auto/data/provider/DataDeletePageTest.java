@@ -19,7 +19,7 @@ public class DataDeletePageTest {
                 .isPublic(false)
                 .build();
 
-        return new Object[][] {
+        return new Object[][]{
                 {parentPage, childPage}
         };
     }

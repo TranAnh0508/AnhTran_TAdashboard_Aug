@@ -23,7 +23,7 @@ public class JsonUtils {
 
     public static <T> T to(String jsonPath, String jsonKey, Class<T> clazz) {
         log.debug("Load json from {}", jsonPath);
-        JsonObject jsonObject = to(jsonPath,JsonObject.class);
+        JsonObject jsonObject = to(jsonPath, JsonObject.class);
         Gson gson = new Gson();
         return gson.fromJson(jsonObject.get(jsonKey).getAsJsonObject(), clazz);
     }

@@ -50,14 +50,16 @@ IntelliJ IDEA Community Edition (download here: https://www.jetbrains.com/idea/d
 5. You can visit the result website to get more information
 
 ## How to run Selenium Grid
-1. Create hub: enter the following string in the first cmd
+1. User can download the Selenium Server at the following link:
+```https://www.selenium.dev/downloads/```
+2. Create hub: enter the following string in the first cmd
 ```java -jar selenium-server-4.25.0.jar hub```
-2. Create node(s): enter the following string in the second cmd or more
+3. Create node(s): enter the following string in the second cmd or more
 ```java -jar selenium-server-4.25.0.jar node  --selenium-manager true```
-3. Enter to localhost: 
+4. Enter to localhost: 
 ```http://localhost:4444/ui/#``` (default)
    ![selenium_grid_sample!](src/main/resources/Selenium_Grid.png)
-4. Run test cases as usual and observe the localhost site
+5. Run test cases as usual and observe the localhost site
 
 ## Project Structure
 **\src\main\java\auto: contain constructor, pages

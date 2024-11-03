@@ -11,20 +11,22 @@ import lombok.*;
 @Builder
 public class Page {
     private String pageName;
-    public String getTrimPageName() {
-        return pageName.replace(" ", " ");
-    }
     private String parentPage;
-    public String getTrimParentName() {
-        return parentPage.replace(" ", " ");
-    }
     @Builder.Default
     private Integer numberOfColumns = 2;
     private String displayAfter;
     private boolean isPublic;
 
     public static Page getDefaultPage() {
-        return JsonUtils.to(Constants.PAGE_DEFAULT_PATH,"defaultPage",Page.class);
+        return JsonUtils.to(Constants.PAGE_DEFAULT_PATH, "defaultPage", Page.class);
+    }
+
+    public String getTrimPageName() {
+        return pageName.replace(" ", " ");
+    }
+
+    public String getTrimParentName() {
+        return parentPage.replace(" ", " ");
     }
 }
 
