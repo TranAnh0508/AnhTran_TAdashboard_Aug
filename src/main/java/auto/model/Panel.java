@@ -15,9 +15,10 @@ public class Panel {
     private PanelSettingTypes type = PanelSettingTypes.CHART;
     private String dataProfile;
     private String displayName;
+    private String chartTitle;
+    private ChartSeries series;
+
     public String getTrimPanelName() {
         return displayName.replace(" ", " ");
     }
-    private String chartTitle;
-    private ChartSeries series;
 }

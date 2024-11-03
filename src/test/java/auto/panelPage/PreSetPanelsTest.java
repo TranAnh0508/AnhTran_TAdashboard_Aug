@@ -27,18 +27,9 @@ public class PreSetPanelsTest extends TestBase {
 
     private final User user = User.getAdminAcc();
 
-    @BeforeMethod(description = "Set up objects")
-    public void setUpObjects() {
-        loginPage.login(user);
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void afterMethod() {
-        dashboardMainPage.logout();
-    }
-
     @Test(description = "Verify that when \"Choose panels\" form is expanded all pre-set panels are populated and sorted correctly ", dataProvider = "TC_27", dataProviderClass = DataPreSetPanelTest.class,retryAnalyzer = RetryAnalyzer.class)
     public void TC_27(Page page, Panel panel) {
+        loginPage.login(user);
         dashboardMainPage.selectGlobalSettingOption(GlobalSettings.ADD_PAGE);
         newPageDialog.completePageInfoDialog(page);
 

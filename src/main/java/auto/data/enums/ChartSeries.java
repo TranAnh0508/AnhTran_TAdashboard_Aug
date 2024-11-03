@@ -18,12 +18,16 @@ public enum ChartSeries {
 
     private final String value;
 
-    ChartSeries(String value) { this.value = value; }
-
-    public String value() { return " " + value; }
+    ChartSeries(String value) {
+        this.value = value;
+    }
 
     public static ChartSeries getRandomSeries() {
         Random random = new Random();
         return values()[random.nextInt(values().length)];
+    }
+
+    public String value() {
+        return " " + value;
     }
 }

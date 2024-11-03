@@ -8,7 +8,11 @@ public enum PanelSettingTypes {
 
     private final String value;
 
-    PanelSettingTypes(String value) { this.value = value; }
+    PanelSettingTypes(String value) {
+        this.value = value;
+    }
 
-    public String value() { return value; }
+    public String value() {
+        return value;
+    }
 }

@@ -21,18 +21,9 @@ public class PanelDialogOnFocusedTest extends TestBase {
 
     private final User user = User.getAdminAcc();
 
-    @BeforeMethod(description = "Set up objects")
-    public void setUpObjects() {
-        loginPage.login(user);
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void afterMethod() {
-        dashboardMainPage.logout();
-    }
-
     @Test(description = "Verify that when \"Add New Panel\" form is on focused all other control/form is disabled or locked.", retryAnalyzer = RetryAnalyzer.class)
     public void TC_28() {
+        loginPage.login(user);
         dashboardMainPage.selectAdministratorOption(Administer.PANELS);
         panelsPage.openNewPanelDialog();
 

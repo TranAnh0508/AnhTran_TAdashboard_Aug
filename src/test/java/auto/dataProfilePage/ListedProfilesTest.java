@@ -15,11 +15,6 @@ public class ListedProfilesTest extends TestBase {
 
     private final User user = User.getAdminAcc();
 
-    @BeforeMethod(description = "Set up objects")
-    public void setUpObjects() {
-        loginPage.login(user);
-    }
-
     @AfterMethod(alwaysRun = true)
     public void afterMethodPositive() {
         dashboardMainPage.logout();
@@ -27,6 +22,7 @@ public class ListedProfilesTest extends TestBase {
 
     @Test(description = "Verify that Data Profiles are listed alphabetically", retryAnalyzer = RetryAnalyzer.class)
     public void TC_67() {
+        loginPage.login(user);
         dashboardMainPage.selectAdministratorOption(Administer.DATA_PROFILES);
     }
 }

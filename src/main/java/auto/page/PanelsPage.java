@@ -1,35 +1,21 @@
 package auto.page;
 
-import auto.data.enums.PanelSettingTypes;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$$x;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class PanelsPage {
     private final SelenideElement addNewBtn = $x("//a[@href=\"javascript:Dashboard.openAddPanel('');\"]");
-    private final SelenideElement okPopupBtn = $x("//input[@id='OK']");
     private final SelenideElement cancelBtn = $x("//input[@id='Cancel']");
     private final ElementsCollection allControlBtn = $$x("//div[@id = 'main-menu']//a");
-
-    /**
-     * Set value for dynamic xpath
-     */
-    private SelenideElement setDynamicPanelLinks(String panel) {
-        String panelLinks = "//div[@id='ccontent']//a[text()='%s']";
-        return $x(String.format(panelLinks, panel));
-    }
 
     private SelenideElement setDynamicEditLinks(String panelName) {
         String editLinks = "//a[text()='%s']//ancestor::td//following-sibling::td/a[text()='Edit']";
         return $x(String.format(editLinks, panelName));
-    }
-
-    private SelenideElement setDynamicSettingsForms(PanelSettingTypes type) {
-        String settingTypes = "//div[@id='tdSettings']//legend[text()='%s Settings']";
-        return $x(String.format(settingTypes, type));
     }
 
     @Step("Open Add New Panel dialog")
