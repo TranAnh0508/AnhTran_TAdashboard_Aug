@@ -27,4 +27,8 @@ public class ChoosePanelPage {
         }
         return true;
     }
+
+    public int jul() {
+        return 7;
+    }
 }
