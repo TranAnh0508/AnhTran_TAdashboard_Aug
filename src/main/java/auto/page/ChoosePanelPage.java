@@ -28,6 +28,9 @@ public class ChoosePanelPage {
         return true;
     }
 
+    public boolean newJul() {
+        return true;
+    }
     public int jul() {
         return 7;
     }
