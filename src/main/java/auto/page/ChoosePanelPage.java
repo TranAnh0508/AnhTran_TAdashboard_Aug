@@ -34,4 +34,7 @@ public class ChoosePanelPage {
     public int jul() {
         return 7;
     }
+    public String newMerge() {
+        return "Merge";
+    }
 }
