@@ -4,7 +4,6 @@ import auto.model.Page;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-
 import java.util.Objects;
 
 import static com.codeborne.selenide.Selenide.$x;
