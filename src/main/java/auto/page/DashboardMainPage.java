@@ -44,6 +44,10 @@ public class DashboardMainPage {
         logoutBtn.click();
     }
 
+    public int example() {
+        return 2;
+    }
+
     @Step("Check the Administrator dropdown is existed")
     public void verifyAdminDropdownDisplayed() {
         administratorDrop.shouldBe(Condition.visible);
