@@ -10,7 +10,6 @@ import auto.utils.Constants;
 import org.testng.annotations.Parameters;
 
 public class TestBase {
-
     @BeforeClass(alwaysRun = true)
     @Parameters("browser")
     public void setUp(String browser) {

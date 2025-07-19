@@ -20,7 +20,6 @@ public class LoginPositiveTest extends TestBase {
     public void loginPositiveTest() {
         loginPage.login(user);
         dashboardMainPage.verifyAdminDropdownDisplayed();
-//        Assertion.assertTrue(dashboardMainPage.verifyAdminDropdownDisplayed(), "Verify that the user login successfully");
     }
 
     @AfterMethod(alwaysRun = true)

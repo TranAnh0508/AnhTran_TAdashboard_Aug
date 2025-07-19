@@ -22,18 +22,9 @@ public class VisiblePageTest extends TestBase {
 
     private final User user = User.getAdminAcc();
 
-    @BeforeMethod(description = "Set up objects")
-    public void setUpObjects() {
-        loginPage.login(user);
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void afterMethodPositive() {
-        dashboardMainPage.logout();
-    }
-
     @Test(description = "Verify that Public pages can be visible and accessed by all users of working repository", dataProvider = "TC_14", dataProviderClass = DataVisiblePageTest.class, retryAnalyzer = RetryAnalyzer.class)
     public void TC_14(Page firstPageInfo) {
+        loginPage.login(user);
         dashboardMainPage.selectGlobalSettingOption(GlobalSettings.ADD_PAGE);
         newPageDialog.completePageInfoDialog(firstPageInfo);
 
@@ -41,6 +32,5 @@ public class VisiblePageTest extends TestBase {
 
         loginPage.login(user);
         dashboardMainPage.verifyPageDisplayed(firstPageInfo.getTrimPageName());
-//        Assertion.assertTrue(dashboardMainPage.verifyPageDisplayed(firstPageInfo.getTrimPageName()), "Newly added page is visible");
     }
 }

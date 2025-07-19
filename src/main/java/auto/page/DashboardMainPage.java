@@ -16,12 +16,6 @@ public class DashboardMainPage {
     private final SelenideElement choosePanelBtn = $x("//a[@id='btnChoosepanel']");
     private final SelenideElement globalBtn = $x("//li[@class='mn-setting']");
 
-    private final String pageNextPage = "//div[@id='main-menu']//li[a[text()='%s']]/following-sibling::li[a[text()='%s']]";
-    private final String pageChildPage = "//div[@id='main-menu']//a[text()='%s']//ancestor::li//following::li//a[text()='%s']";
-
-    /**
-     * Set value for dynamic xpath
-     */
     private SelenideElement setDynamicAdministerDropOptions(Administer option) {
         String dynamicAdministerDropOptions = "//ul[@id='ulAdminister']//a[text()='%s']";
         return $x(String.format(dynamicAdministerDropOptions, option.value()));
@@ -37,16 +31,7 @@ public class DashboardMainPage {
         return $x(String.format(pageSelected, pageName));
     }
 
-//    private SelenideElement setPageNextPage(String previousPage, String nextPage) {
-//        return $x(String.format(pageNextPage, NameUtils.trimName(previousPage), NameUtils.trimName(nextPage)));
-//    }
-//
-//    private SelenideElement setPageChildPage(String parentPage, String childPage) {
-//        return $x(String.format(pageChildPage, NameUtils.trimName(parentPage), NameUtils.trimName(childPage)));
-//    }
-
     private SelenideElement setSelectedChildPage(String childPageName) {
-        //Test Child
         String childPageSelected = "//div[@id='main-menu']//li[contains(@class,'haschild')]//li/a[text()='%s']";
         return $x(String.format(childPageSelected, childPageName));
     }
@@ -65,9 +50,6 @@ public class DashboardMainPage {
         administratorDrop.shouldBe(Condition.enabled);
     }
 
-    /**
-     * Action with Global Setting Menu
-     */
     public void clickGlobalSettingButton() {
         globalBtn.shouldBe(Condition.enabled);
         globalBtn.click();
@@ -118,17 +100,11 @@ public class DashboardMainPage {
         setSelectedChildPage(childPageName).shouldBe(Condition.visible);
     }
 
-    /**
-     * Action with Choose Panel button
-     */
     public void clickChoosePanelButton() {
         choosePanelBtn.shouldBe(Condition.enabled);
         choosePanelBtn.click();
     }
 
-    /**
-     * Action with Administer Drop List
-     */
     public void clickAdministerDropList() {
         administerDrop.shouldBe(Condition.enabled);
         administerDrop.click();

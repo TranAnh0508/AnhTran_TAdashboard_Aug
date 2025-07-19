@@ -9,7 +9,11 @@ public enum GlobalSettings {
 
     private final String value;
 
-    GlobalSettings(String value) { this.value = value; }
+    GlobalSettings(String value) {
+        this.value = value;
+    }
 
-    public String value() { return value; }
+    public String value() {
+        return value;
+    }
 }
