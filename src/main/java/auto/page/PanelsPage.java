@@ -38,4 +38,8 @@ public class PanelsPage {
     public boolean isAllControlBtnEnabled() {
         return allControlBtn.filter(Condition.enabled).filter(Condition.visible).isEmpty();
     }
+
+    public boolean gitHubPractice() {
+        return true;
+    }
 }
